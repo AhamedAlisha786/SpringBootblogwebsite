@@ -33,27 +33,28 @@ A full-stack blog platform where users can create, read, update, and delete blog
 ---
 
 ## 🗂️ Project Structure
-'''
+```
 root/
-├── frontend/                  # React app (Vite)
+├── frontend/                        # React app (Vite)
 │   ├── src/
-│   │   ├── api/               # Axios instance & API calls
-│   │   ├── components/        # Reusable UI components
-│   │   ├── context/           # Auth context
-│   │   ├── pages/             # All page components
+│   │   ├── api/                     # Axios instance & API calls
+│   │   ├── components/              # Reusable UI components
+│   │   ├── context/                 # Auth context
+│   │   ├── pages/                   # All page components
 │   │   └── main.jsx
+│   ├── index.html
+│   └── package.json
 │
-├── backend/                   # Spring Boot app
-│   └── src/main/java/com/example/LoanApp/
-│       ├── Config/            # Security & CORS config
-│       ├── Controller/        # REST controllers
-│       ├── Dto/               # Request/Response DTOs
-│       ├── Entity/            # JPA entities
-│       ├── Repository/        # Spring Data repositories
-│       ├── Security/          # JWT filter & user details
-│       └── Service/           # Business logic
-
-'''
+└── backend/                         # Spring Boot app
+    └── src/main/java/com/example/LoanApp/
+        ├── Config/                  # Security & CORS config
+        ├── Controller/              # REST controllers
+        ├── Dto/                     # Request/Response DTOs
+        ├── Entity/                  # JPA entities
+        ├── Repository/              # Spring Data repositories
+        ├── Security/                # JWT filter & user details
+        └── Service/                 # Business logic
+```
 
 ## ⚙️ Setup & Installation
 
