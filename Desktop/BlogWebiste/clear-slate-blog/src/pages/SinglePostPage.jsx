@@ -33,7 +33,7 @@ export default function SinglePostPage() {
   useEffect(() => {
     if (!id) return;
     axiosInstance
-      .get(`/api/comments/post/${id}`)
+      .get(`/comments/post/${id}`)
       .then((res) => setComments(Array.isArray(res.data) ? res.data : []))
       .catch(console.error);
   }, [id]);
@@ -42,7 +42,7 @@ export default function SinglePostPage() {
   useEffect(() => {
     if (!id || !user) return;
     axiosInstance
-      .get(`/api/likes/status`, { params: { postId: id, userId: user.id } })
+      .get(`/likes/status`, { params: { postId: id, userId: user.id } })
       .then((res) => {
         setLiked(res.data.liked);
         setLikeCount(res.data.likeCount);
@@ -54,7 +54,7 @@ export default function SinglePostPage() {
   const handleLike = async () => {
     if (!user) return;
     try {
-      const res = await axiosInstance.post(`/api/likes/toggle`, null, {
+      const res = await axiosInstance.post(`/likes/toggle`, null, {
         params: { postId: id, userId: user.id },
       });
       setLiked(res.data.liked);
@@ -70,7 +70,7 @@ export default function SinglePostPage() {
     if (!commentText.trim() || !user) return;
     setSubmitting(true);
     try {
-      const res = await axiosInstance.post(`/api/comments/post`, null, {
+      const res = await axiosInstance.post(`/comments/post`, null, {
         params: {
           text: commentText.trim(),
           postId: id,
