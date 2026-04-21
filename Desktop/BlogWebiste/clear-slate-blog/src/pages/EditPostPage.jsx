@@ -47,7 +47,7 @@ export default function EditPostPage() {
     }
     setSaving(true);
     try {
-      await axiosInstance.put(`/api/posts/update/${id}`, {
+      await axiosInstance.put(`/posts/update/${id}`, {
         title: title.trim(),
         excerpt: content.trim().slice(0, 120) + '...',
         content: content.trim(),
