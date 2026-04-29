@@ -73,7 +73,7 @@ public class SecurityConfig {
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
             .authenticationProvider(authProvider())
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/auth/**").permitAll()
+                .requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers("/api/posts/**").authenticated()
                 .requestMatchers("/refresh").authenticated()
                 .requestMatchers("/api/comments/**").authenticated()
